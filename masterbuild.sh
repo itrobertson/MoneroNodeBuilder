@@ -46,13 +46,18 @@ apt-get update;sudo apt install rpcbind -y;
      sudo iptables -A INPUT -p tcp --dport 9999 -j ACCEPT;
      iptables-save;
 apt install make; apt install make-guile -y;
+apt install pacman -y;
 wget https://downloads.getmonero.org/cli/monero-linux-x64-v0.15.0.1.tar.bz2;
 tar xvfo monero-linux-x64-v0.15.0.1.tar.bz2 ;
  rm -f monero-linux-x64-v0.15.0.1.tar.bz2;
  mv monero-x86_64-linux-gnu-v0.15.0.1/ monero;
+ cd monero;
+ pacman -Syu;
+./bin/monerod --log-file monerod.log --detach
+
 sudo apt-get install software-properties-common -y;
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y;
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
+
 
 ###
 #OPTIONAL ::
@@ -70,6 +75,7 @@ then
 	echo "!!!!!!!  RUNNING OPTIONAL COMMANDS: !!!!!!!";
 	echo "\n"
 	echo $1;
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
 	apt-get install docker docker.io -y;
 	curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose;
 	chmod +x /usr/local/bin/docker-compose;
