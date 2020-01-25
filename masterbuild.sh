@@ -75,6 +75,7 @@ then
 	echo "!!!!!!!  RUNNING OPTIONAL COMMANDS: !!!!!!!";
 	echo "\n"
 	echo $1;
+	cd ~/ ;
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
 	apt-get install docker docker.io -y;
 	curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose;
@@ -95,6 +96,9 @@ then
 	apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev -y;
 	apt-get install python-pip -y;
  	#pip install pyblake2 ;
+	git clone https://github.com/blockcollider/bcnode;
+  	apt install yarn -y;
+  	curl https://sh.rustup.rs -sSf | sh ;
 else
 	echo "ERROR: Status 1. Bad Command line Argument.";
 	exit;
