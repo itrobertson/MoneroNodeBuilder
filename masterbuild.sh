@@ -22,6 +22,7 @@ apt install uuid-dev -y;
 apt update && apt upgrade -y;
 git clone https://github.com/xmrig/xmrig-proxy.git;
 git clone https://github.com/xmrig/xmrig.git;
+git clone https://github.com/tpruvot/cpuminer-multi;
 mkdir xmrig/build;
 sudo apt-get install automake libtool autoconf -y;
 cd xmrig/build;
@@ -78,7 +79,6 @@ then
 	iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT;
 	iptables -A INPUT -p tcp --match multiport --dports 1024:65000 -j ACCEPT;
 	iptables-save;
-	git clone https://github.com/tpruvot/cpuminer-multi;
 	apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev -y;
 	apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y;
 	apt-get install software-properties-common -y;
