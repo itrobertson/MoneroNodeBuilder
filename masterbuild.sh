@@ -18,7 +18,7 @@ apt update && apt upgrade -y;
 sudo apt install qtmultimedia5-dev qml-module-qtmultimedia libzbar-dev -y;
 apt update && apt upgrade;
 apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y;
-apt install uuid-dev npm node-gyp nodejs-dev libssl1.0-dev -y;
+apt install uuid-dev npm nodejs-dev node-gyp  libssl1.0-dev -y;
 apt update && apt upgrade -y;
 git clone https://github.com/xmrig/xmrig-proxy.git;
 git clone https://github.com/xmrig/xmrig.git;
