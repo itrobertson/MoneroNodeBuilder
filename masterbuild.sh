@@ -8,17 +8,19 @@
 #Apache 2.0 License.
 ###
 
-
-#optional=${args[0]};
+ulimit -c unlimited;
 config_setting=$1;
 prime_config="prime";
 optional_config="optional";
 if [ $config_setting = $prime_config ]
 then
 apt update && apt upgrade -y;
-sudo apt install qtmultimedia5-dev qml-module-qtmultimedia libzbar-dev -y; apt update && apt upgrade;
-sudo apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y;
+sudo apt install qtmultimedia5-dev qml-module-qtmultimedia libzbar-dev -y;
+apt update && apt upgrade;
+apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y;
+apt install uuid-dev -y;
 apt update && apt upgrade -y;
+git clone https://github.com/xmrig/xmrig-proxy.git;
 git clone https://github.com/xmrig/xmrig.git;
 mkdir xmrig/build;
 sudo apt-get install automake libtool autoconf -y;
@@ -69,14 +71,13 @@ then
 	echo $1;
 	apt-get install docker docker.io -y;
 	curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose;
-chmod +x /usr/local/bin/docker-compose;
+	chmod +x /usr/local/bin/docker-compose;
 	ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose;
 	iptables -A INPUT -i lo -j ACCEPT;sudo iptables -A OUTPUT -o lo -j ACCEPT;
 	iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT;
 	iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT;
 	iptables -A INPUT -p tcp --match multiport --dports 1024:65000 -j ACCEPT;
 	iptables-save;
-	ulimit -c unlimited;
 	git clone https://github.com/tpruvot/cpuminer-multi;
 	apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev -y;
 	apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y;
