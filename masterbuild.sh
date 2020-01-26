@@ -52,8 +52,7 @@ tar xvfo monero-linux-x64-v0.15.0.1.tar.bz2 ;
  rm -f monero-linux-x64-v0.15.0.1.tar.bz2;
  mv monero-x86_64-linux-gnu-v0.15.0.1/ monero;
  cd monero;
- #pacman -Syu;
-./bin/monerod --log-file monerod.log --detach;
+./monerod --log-file monerod.log --detach;
 
 sudo apt-get install software-properties-common -y;
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y;
@@ -95,7 +94,6 @@ then
 	apt-get install libminiupnpc-dev libzmq3-dev -y;
 	apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev -y;
 	apt-get install python-pip -y;
- 	#pip install pyblake2 ;
 	git clone https://github.com/blockcollider/bcnode;
   	apt install yarn -y;
   	curl https://sh.rustup.rs -sSf | sh ;
