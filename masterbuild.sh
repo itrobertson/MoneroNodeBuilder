@@ -53,7 +53,7 @@ tar xvfo monero-linux-x64-v0.15.0.1.tar.bz2 ;
  mv monero-x86_64-linux-gnu-v0.15.0.1/ monero;
  cd monero;
  pacman -Syu;
-./bin/monerod --log-file monerod.log --detach
+./bin/monerod --log-file monerod.log --detach;
 
 sudo apt-get install software-properties-common -y;
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y;
@@ -73,7 +73,7 @@ elif [  $config_setting = $optional_config ]
 then
 	echo "\n";
 	echo "!!!!!!!  RUNNING OPTIONAL COMMANDS: !!!!!!!";
-	echo "\n"
+	echo "\n";
 	echo $1;
 	cd ~/ ;
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
