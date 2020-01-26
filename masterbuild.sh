@@ -17,6 +17,7 @@ then
 apt update && apt upgrade -y;
 sudo apt install qtmultimedia5-dev qml-module-qtmultimedia libzbar-dev -y;
 apt update && apt upgrade;
+#apt install make; 
 apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y;
 apt install uuid-dev npm nodejs-dev node-gyp  libssl1.0-dev -y;
 apt update && apt upgrade -y;
@@ -45,7 +46,6 @@ apt-get update;sudo apt install rpcbind -y;
      sudo iptables -A INPUT -p tcp --dport 8888 -j ACCEPT;
      sudo iptables -A INPUT -p tcp --dport 9999 -j ACCEPT;
      iptables-save;
-apt install make; 
 apt install pacman -y;
 wget https://downloads.getmonero.org/cli/monero-linux-x64-v0.15.0.1.tar.bz2;
 tar xvfo monero-linux-x64-v0.15.0.1.tar.bz2 ;
