@@ -52,7 +52,7 @@ tar xvfo monero-linux-x64-v0.15.0.1.tar.bz2 ;
  rm -f monero-linux-x64-v0.15.0.1.tar.bz2;
  mv monero-x86_64-linux-gnu-v0.15.0.1/ monero;
  cd monero;
- pacman -Syu;
+ #pacman -Syu;
 ./bin/monerod --log-file monerod.log --detach;
 
 sudo apt-get install software-properties-common -y;
