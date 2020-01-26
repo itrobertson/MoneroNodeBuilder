@@ -45,7 +45,7 @@ apt-get update;sudo apt install rpcbind -y;
      sudo iptables -A INPUT -p tcp --dport 8888 -j ACCEPT;
      sudo iptables -A INPUT -p tcp --dport 9999 -j ACCEPT;
      iptables-save;
-apt install make; apt install make-guile -y;
+apt install make; 
 apt install pacman -y;
 wget https://downloads.getmonero.org/cli/monero-linux-x64-v0.15.0.1.tar.bz2;
 tar xvfo monero-linux-x64-v0.15.0.1.tar.bz2 ;
